@@ -54,6 +54,8 @@ final class LoginViewController: UIViewController {
     
     weak var coordinatorDelegate: LoginViewControllerDelegate?
     
+    let optional: String? = "prova"
+    
     override func loadView() {
         super.loadView()
         setUpLayout()
@@ -62,7 +64,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        print("test")
+        print(optional!)
     }
     
     private func setUpLayout() {
