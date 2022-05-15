@@ -62,6 +62,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        print("test")
     }
     
     private func setUpLayout() {
