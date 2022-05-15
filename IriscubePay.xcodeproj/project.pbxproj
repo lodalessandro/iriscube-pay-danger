@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91FFE53AA0242C341CD4B2F2 /* Pods_IriscubePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA796D805BDEA2852F506CF /* Pods_IriscubePay.framework */; };
+		EF8C210D24FDC1E6008B5232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C210C24FDC1E6008B5232 /* AppDelegate.swift */; };
+		EF8C211124FDC1E6008B5232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C211024FDC1E6008B5232 /* ViewController.swift */; };
+		EF8C211424FDC1E6008B5232 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8C211224FDC1E6008B5232 /* Main.storyboard */; };
+		EF8C211624FDC1E8008B5232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8C211524FDC1E8008B5232 /* Assets.xcassets */; };
+		EF8C211924FDC1E8008B5232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8C211724FDC1E8008B5232 /* LaunchScreen.storyboard */; };
+		EF8C212124FDC23D008B5232 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212024FDC23D008B5232 /* AppCoordinator.swift */; };
+		EF8C212524FDC2BC008B5232 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212424FDC2BC008B5232 /* Coordinator.swift */; };
+		EF8C212724FDC490008B5232 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212624FDC48F008B5232 /* UIApplicationExtension.swift */; };
+		EF8C212A24FDC4D4008B5232 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212924FDC4D4008B5232 /* TabBarCoordinator.swift */; };
+		EF8C212C24FDC6E4008B5232 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212B24FDC6E4008B5232 /* LoginCoordinator.swift */; };
+		EF8C212F24FDC83E008B5232 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C212E24FDC83E008B5232 /* LoginViewController.swift */; };
+		EF8C213124FDCA00008B5232 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C213024FDCA00008B5232 /* NavigationController.swift */; };
+		EF8C219F25006615008B5232 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C219E25006615008B5232 /* HomeCoordinator.swift */; };
+		EF8C21A12500D875008B5232 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C21A02500D875008B5232 /* HomeViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		64950D0734BB4EE72ED54819 /* Pods-IriscubePay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IriscubePay.debug.xcconfig"; path = "Target Support Files/Pods-IriscubePay/Pods-IriscubePay.debug.xcconfig"; sourceTree = "<group>"; };
+		CCA796D805BDEA2852F506CF /* Pods_IriscubePay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IriscubePay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8C210924FDC1E6008B5232 /* IriscubePay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IriscubePay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8C210C24FDC1E6008B5232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF8C211024FDC1E6008B5232 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF8C211324FDC1E6008B5232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF8C211524FDC1E8008B5232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF8C211824FDC1E8008B5232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF8C211A24FDC1E8008B5232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF8C212024FDC23D008B5232 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EF8C212424FDC2BC008B5232 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EF8C212624FDC48F008B5232 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		EF8C212924FDC4D4008B5232 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		EF8C212B24FDC6E4008B5232 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		EF8C212E24FDC83E008B5232 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EF8C213024FDCA00008B5232 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		EF8C219E25006615008B5232 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		EF8C21A02500D875008B5232 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F2018E181935808F1D0C6C06 /* Pods-IriscubePay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IriscubePay.release.xcconfig"; path = "Target Support Files/Pods-IriscubePay/Pods-IriscubePay.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF8C210624FDC1E6008B5232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FFE53AA0242C341CD4B2F2 /* Pods_IriscubePay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DA7C41618F933D1431FE99C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64950D0734BB4EE72ED54819 /* Pods-IriscubePay.debug.xcconfig */,
+				F2018E181935808F1D0C6C06 /* Pods-IriscubePay.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A6C5DCA0EA63E87A043734E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCA796D805BDEA2852F506CF /* Pods_IriscubePay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF8C210024FDC1E6008B5232 = {
+			isa = PBXGroup;
+			children = (
+				EF8C210B24FDC1E6008B5232 /* IriscubePay */,
+				EF8C210A24FDC1E6008B5232 /* Products */,
+				2DA7C41618F933D1431FE99C /* Pods */,
+				A6C5DCA0EA63E87A043734E0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF8C210A24FDC1E6008B5232 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C210924FDC1E6008B5232 /* IriscubePay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF8C210B24FDC1E6008B5232 /* IriscubePay */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C210C24FDC1E6008B5232 /* AppDelegate.swift */,
+				EF8C212324FDC29E008B5232 /* Coordinators */,
+				EF8C212D24FDC815008B5232 /* ViewControllers */,
+				EF8C212824FDC4B2008B5232 /* Extensions */,
+				EF8C219D24FFFF60008B5232 /* Network */,
+				EF8C211024FDC1E6008B5232 /* ViewController.swift */,
+				EF8C211224FDC1E6008B5232 /* Main.storyboard */,
+				EF8C211524FDC1E8008B5232 /* Assets.xcassets */,
+				EF8C211724FDC1E8008B5232 /* LaunchScreen.storyboard */,
+				EF8C211A24FDC1E8008B5232 /* Info.plist */,
+			);
+			path = IriscubePay;
+			sourceTree = "<group>";
+		};
+		EF8C212324FDC29E008B5232 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C212424FDC2BC008B5232 /* Coordinator.swift */,
+				EF8C212024FDC23D008B5232 /* AppCoordinator.swift */,
+				EF8C212B24FDC6E4008B5232 /* LoginCoordinator.swift */,
+				EF8C212924FDC4D4008B5232 /* TabBarCoordinator.swift */,
+				EF8C219E25006615008B5232 /* HomeCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		EF8C212824FDC4B2008B5232 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C212624FDC48F008B5232 /* UIApplicationExtension.swift */,
+				EF8C213024FDCA00008B5232 /* NavigationController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF8C212D24FDC815008B5232 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C212E24FDC83E008B5232 /* LoginViewController.swift */,
+				EF8C21A02500D875008B5232 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EF8C219D24FFFF60008B5232 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF8C210824FDC1E6008B5232 /* IriscubePay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF8C211D24FDC1E8008B5232 /* Build configuration list for PBXNativeTarget "IriscubePay" */;
+			buildPhases = (
+				DF8348A94D71EC0C923710FB /* [CP] Check Pods Manifest.lock */,
+				EF8C210524FDC1E6008B5232 /* Sources */,
+				EF8C210624FDC1E6008B5232 /* Frameworks */,
+				EF8C210724FDC1E6008B5232 /* Resources */,
+				88EBD7392EF0D9FD918FFFD8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IriscubePay;
+			productName = IriscubePay;
+			productReference = EF8C210924FDC1E6008B5232 /* IriscubePay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF8C210124FDC1E6008B5232 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Lorenzo Barranco";
+				TargetAttributes = {
+					EF8C210824FDC1E6008B5232 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = EF8C210424FDC1E6008B5232 /* Build configuration list for PBXProject "IriscubePay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF8C210024FDC1E6008B5232;
+			productRefGroup = EF8C210A24FDC1E6008B5232 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF8C210824FDC1E6008B5232 /* IriscubePay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF8C210724FDC1E6008B5232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8C211924FDC1E8008B5232 /* LaunchScreen.storyboard in Resources */,
+				EF8C211624FDC1E8008B5232 /* Assets.xcassets in Resources */,
+				EF8C211424FDC1E6008B5232 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88EBD7392EF0D9FD918FFFD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IriscubePay/Pods-IriscubePay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IriscubePay/Pods-IriscubePay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IriscubePay/Pods-IriscubePay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF8348A94D71EC0C923710FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IriscubePay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF8C210524FDC1E6008B5232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8C212F24FDC83E008B5232 /* LoginViewController.swift in Sources */,
+				EF8C212724FDC490008B5232 /* UIApplicationExtension.swift in Sources */,
+				EF8C212124FDC23D008B5232 /* AppCoordinator.swift in Sources */,
+				EF8C212A24FDC4D4008B5232 /* TabBarCoordinator.swift in Sources */,
+				EF8C211124FDC1E6008B5232 /* ViewController.swift in Sources */,
+				EF8C212524FDC2BC008B5232 /* Coordinator.swift in Sources */,
+				EF8C210D24FDC1E6008B5232 /* AppDelegate.swift in Sources */,
+				EF8C21A12500D875008B5232 /* HomeViewController.swift in Sources */,
+				EF8C219F25006615008B5232 /* HomeCoordinator.swift in Sources */,
+				EF8C213124FDCA00008B5232 /* NavigationController.swift in Sources */,
+				EF8C212C24FDC6E4008B5232 /* LoginCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF8C211224FDC1E6008B5232 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF8C211324FDC1E6008B5232 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF8C211724FDC1E8008B5232 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF8C211824FDC1E8008B5232 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF8C211B24FDC1E8008B5232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF8C211C24FDC1E8008B5232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF8C211E24FDC1E8008B5232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64950D0734BB4EE72ED54819 /* Pods-IriscubePay.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AXCLQ962TC;
+				INFOPLIST_FILE = IriscubePay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iriscube.reply.IriscubePay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF8C211F24FDC1E8008B5232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2018E181935808F1D0C6C06 /* Pods-IriscubePay.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AXCLQ962TC;
+				INFOPLIST_FILE = IriscubePay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iriscube.reply.IriscubePay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF8C210424FDC1E6008B5232 /* Build configuration list for PBXProject "IriscubePay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8C211B24FDC1E8008B5232 /* Debug */,
+				EF8C211C24FDC1E8008B5232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF8C211D24FDC1E8008B5232 /* Build configuration list for PBXNativeTarget "IriscubePay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8C211E24FDC1E8008B5232 /* Debug */,
+				EF8C211F24FDC1E8008B5232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF8C210124FDC1E6008B5232 /* Project object */;
+}
