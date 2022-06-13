@@ -26,7 +26,7 @@ allSourceFiles.forEach {
     let result = danger.utils.readFile($0).range(of: forceUnwrapRegex,
                                                  options: .regularExpression) != nil
     if result {
-        warn("Found force unwrapped optional value")
+        fail("Found force unwrapped optional value")
     }
 }
 
