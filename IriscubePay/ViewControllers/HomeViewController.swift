@@ -52,10 +52,12 @@ final class HomeViewController: UIViewController {
     }()
     
     weak var coordinatorDelegate: HomeViewControllerDelegate?
+    var unwrappedOptional: String?
     
     override func loadView() {
         super.loadView()
         setUpLayout()
+        print(unwrappedOptional!)
     }
     
     override func viewDidLoad() {
