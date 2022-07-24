@@ -10,8 +10,13 @@ import Danger
 
 let danger = Danger()
 
-let rules: [RuleRunner.RunnableRule] = [.bigPullRequest,
-                                        .forceUnwrappedOptional,
-                                        .prHasAssignee]
+let rules: [RuleRunner.RunnableRule] = [ .bigPullRequest,
+                                         .prHasAssignee,
+                                         .prHasDescription,
+                                         .forceUnwrappedOptional,
+                                         .classProtocol ]
 let ruleRunner: RuleRunner = .init()
 ruleRunner.runRules(from: rules)
+
+
+danger.utils.diff
