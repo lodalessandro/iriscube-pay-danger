@@ -1,6 +1,9 @@
 import Danger
 
+typealias RunnableRule = RuleRunner.RunnableRule
+
 class RuleRunner {
+    
     
     let allSourceFiles: [File]
     let createdFiles: [File]
@@ -14,19 +17,20 @@ class RuleRunner {
     
     func runRule(from runnableRule: RunnableRule) {
         let rule = runnableRule.rule
-        let result = rule.run(on: allSourceFiles)
-        var resultMessage: String = ""
+        rule.run(on: allSourceFiles)
+        
+        guard let result = rule.result else { return }
         
         switch result {
             
         case .success:
-            resultMessage = "\(rule.name) success"
+            let resultMessage = "\(rule.name) success"
             message("✓ \(resultMessage)")
         case .warn:
-            resultMessage = rule.message ?? "\(rule.name) warning"
+            let resultMessage = rule.message ?? "\(rule.name) warning"
             warn("⚠ \(resultMessage)")
         case .fail:
-            resultMessage = rule.message ?? "\(rule.name) failure"
+            let resultMessage = rule.message ?? "\(rule.name) failure"
             fail("ⓧ \(resultMessage)")
         }
     }
@@ -46,6 +50,7 @@ extension RuleRunner {
         case prHasAssignee
         case prHasDescription
         case classProtocol
+        case prHasTooManyCommits
         
         var rule: BaseRule {
             switch self {
@@ -59,6 +64,8 @@ extension RuleRunner {
                 return prHasDescriptionRule
             case .classProtocol:
                 return classProtocolRule
+            case .prHasTooManyCommits:
+                return prHasTooManyCommitsRule
             }
         }
     }

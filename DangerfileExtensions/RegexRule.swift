@@ -1,29 +1,35 @@
 import Danger
 
-class RegexRule: BaseRule {    
-    var name: String
-    var message: String?
+class RegexRule: BaseRule {
     var regex: String
+    var regexMatchResult: RuleResult
     
     init(name: String,
          message: String? = nil,
-         regex: String) {
-        self.name = name
-        self.message = message
+         regex: String,
+         regexMatchResult: RuleResult) {
+        
         self.regex = regex
+        self.regexMatchResult = regexMatchResult
+        super.init(name: name, message: message)
     }
     
-    func run(on files: [File]?) -> RuleResult {
-        guard let files = files else { return .success }
+    override func run(on files: [File]?) {
+        guard let files = files
+        else {
+            result = .success
+            return
+        }
         
         for file in files {
-            let result = danger.utils.readFile(file).range(of: regex,
+            let regexResult = danger.utils.readFile(file).range(of: regex,
                                                            options: .regularExpression)
-            if let _ = result {
-                return .fail
+            if let _ = regexResult {
+                result = regexMatchResult
+                return
             }
         }
         
-        return .success
+        result = .success
     }
 }
