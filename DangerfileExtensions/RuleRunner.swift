@@ -25,13 +25,14 @@ class RuleRunner {
             
         case .success:
             let resultMessage = "\(rule.name) success"
-            message("✓ \(resultMessage)")
+            print("✓ \(resultMessage)")
+            
         case .warn:
             let resultMessage = rule.message ?? "\(rule.name) warning"
-            warn("⚠ \(resultMessage)")
+            print("⚠ \(resultMessage)")
         case .fail:
             let resultMessage = rule.message ?? "\(rule.name) failure"
-            fail("ⓧ \(resultMessage)")
+            print("ⓧ \(resultMessage)")
         }
     }
     
@@ -51,6 +52,7 @@ extension RuleRunner {
         case prHasDescription
         case classProtocol
         case prHasTooManyCommits
+        case bigFile
         
         var rule: BaseRule {
             switch self {
@@ -66,6 +68,8 @@ extension RuleRunner {
                 return classProtocolRule
             case .prHasTooManyCommits:
                 return prHasTooManyCommitsRule
+            case .bigFile:
+                return bigFileRule
             }
         }
     }
