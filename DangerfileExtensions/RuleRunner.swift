@@ -1,6 +1,9 @@
 import Danger
 
+typealias RunnableRule = RuleRunner.RunnableRule
+
 class RuleRunner {
+    
     
     let allSourceFiles: [File]
     let createdFiles: [File]
@@ -14,20 +17,21 @@ class RuleRunner {
     
     func runRule(from runnableRule: RunnableRule) {
         let rule = runnableRule.rule
-        let result = rule.run(on: allSourceFiles)
+        rule.run(on: allSourceFiles)
+        
+        guard let result = rule.result else { return }
         
         switch result {
+            
         case .success:
-            let successMessage = rule.successMessage ?? "\(rule.name) success"
-            message("✓ \(successMessage)")
-            
+            let resultMessage = "\(rule.name) success"
+            message("✓ \(resultMessage)")
         case .warn:
-            let warnMessage = rule.warnMessage ?? "\(rule.name) warning"
-            warn("⚠ \(warnMessage)")
-            
+            let resultMessage = rule.message ?? "\(rule.name) warning"
+            warn("⚠ \(resultMessage)")
         case .fail:
-            let failMessage = rule.failMessage ?? "\(rule.name) failure"
-            fail("ⓧ \(failMessage)")
+            let resultMessage = rule.message ?? "\(rule.name) failure"
+            fail("ⓧ \(resultMessage)")
         }
     }
     
@@ -44,6 +48,9 @@ extension RuleRunner {
         case bigPullRequest
         case forceUnwrappedOptional
         case prHasAssignee
+        case prHasDescription
+        case classProtocol
+        case prHasTooManyCommits
         
         var rule: BaseRule {
             switch self {
@@ -53,6 +60,12 @@ extension RuleRunner {
                 return forceUnwrapRule
             case .prHasAssignee:
                 return prAssigneeRule
+            case .prHasDescription:
+                return prHasDescriptionRule
+            case .classProtocol:
+                return classProtocolRule
+            case .prHasTooManyCommits:
+                return prHasTooManyCommitsRule
             }
         }
     }

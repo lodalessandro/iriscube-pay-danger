@@ -1,11 +1,15 @@
 import Danger
 
-protocol BaseRule {
+class BaseRule {
+    var name: String
+    var message: String?
+    var result: RuleResult?
     
-    var name: String { get set }
-    var successMessage: String? { get set }
-    var warnMessage: String? { get set }
-    var failMessage: String? { get set }
+    init(name: String,
+         message: String? = nil) {
+        self.name = name
+        self.message = message
+    }
     
-    func run(on files: [File]?) -> RuleResult
+    func run(on files: [File]?) {}
 }
