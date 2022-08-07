@@ -25,13 +25,14 @@ class RuleRunner {
             
         case .success:
             let resultMessage = "\(rule.name) success"
-            message("✓ \(resultMessage)")
+            print("✓ \(resultMessage)")
+            
         case .warn:
             let resultMessage = rule.message ?? "\(rule.name) warning"
-            warn("⚠ \(resultMessage)")
+            print("⚠ \(resultMessage)")
         case .fail:
             let resultMessage = rule.message ?? "\(rule.name) failure"
-            fail("ⓧ \(resultMessage)")
+            print("ⓧ \(resultMessage)")
         }
     }
     
