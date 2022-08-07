@@ -91,3 +91,7 @@ let bigFile: ([File]) -> RuleResult = {
     
     return result
 }
+
+let bigFileRule: FileRule = .init(name: "big file rule",
+                                  message: "Files should contains less then 100 lines of code",
+                                  execution: bigFile)

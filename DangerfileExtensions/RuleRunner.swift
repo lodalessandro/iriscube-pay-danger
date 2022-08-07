@@ -52,6 +52,7 @@ extension RuleRunner {
         case prHasDescription
         case classProtocol
         case prHasTooManyCommits
+        case bigFile
         
         var rule: BaseRule {
             switch self {
@@ -67,6 +68,8 @@ extension RuleRunner {
                 return classProtocolRule
             case .prHasTooManyCommits:
                 return prHasTooManyCommitsRule
+            case .bigFile:
+                return bigFileRule
             }
         }
     }
