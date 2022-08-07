@@ -1,3 +1,5 @@
+import Danger
+
 //MARK: Big pull request --------------------------------------------------------------------------
 var bigPr: () -> RuleResult = {
     let bigPRThreshold = 300
@@ -75,3 +77,17 @@ let classProtocolRule: RegexRule = .init(name: "class protocol rule",
                                          regexMatchResult: .warn)
 
 //MARK: big file ----------------------------------------------------------------------------------
+let bigFile: ([File]) -> RuleResult = {
+    var result: RuleResult = .success
+    
+    $0.forEach { file in
+        let fileString = danger.utils.readFile(file)
+        let numLines = fileString.numberOfOccurrencesOf(string: "\n") + 1
+        if numLines > 100 {
+            result = .warn
+            return
+        }
+    }
+    
+    return result
+}

@@ -3,9 +3,11 @@ import Danger
 // fileImport: DangerfileExtensions/BaseRule.swift
 // fileImport: DangerfileExtensions/PrRule.swift
 // fileImport: DangerfileExtensions/RegexRule.swift
+// fileImport: DangerfileExtensions/FileRule.swift
 // fileImport: DangerfileExtensions/RuleResult.swift
 // fileImport: DangerfileExtensions/RuleRunner.swift
 // fileImport: DangerfileExtensions/RulesImplementation.swift
+// fileImport: DangerfileExtensions/Extensions.swift
 
 
 let danger = Danger()
