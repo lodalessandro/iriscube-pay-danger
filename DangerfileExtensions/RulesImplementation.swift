@@ -82,8 +82,7 @@ let bigFile: ([File]) -> RuleResult = {
     
     $0.forEach { file in
         let fileString = danger.utils.readFile(file)
-        let numLines = fileString.numberOfOccurrencesOf(string: "\n") + 1
-        if numLines > 100 {
+        if fileString.numberOfLines() > 100 {
             result = .warn
             return
         }
@@ -95,3 +94,9 @@ let bigFile: ([File]) -> RuleResult = {
 let bigFileRule: FileRule = .init(name: "big file rule",
                                   message: "Files should contains less then 100 lines of code",
                                   execution: bigFile)
+
+// MARK: todo mark --------------------------------------------------------------------------------
+let todoMarkRule: RegexRule = .init(name: "todo mark rule",
+                                    message: "Found todo mark, please check it",
+                                    regex: #"\/\/ TODO: .*"#,
+                                    regexMatchResult: .warn)

@@ -18,6 +18,8 @@ let rules: [RunnableRule] = [ .bigPullRequest,
                               .prHasTooManyCommits,
                               .forceUnwrappedOptional,
                               .classProtocol,
-                              .bigFile]
+                              .bigFile,
+                              .todoMark]
+
 let ruleRunner: RuleRunner = .init()
 ruleRunner.runRules(from: rules)
