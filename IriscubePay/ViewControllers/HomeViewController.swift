@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol HomeViewControllerDelegate: class {
+protocol HomeViewControllerDelegate: AnyObject {
 }
 
 final class HomeViewController: UIViewController {
