@@ -19,7 +19,8 @@ let rules: [RunnableRule] = [ .bigPullRequest,
                               .forceUnwrappedOptional,
                               .classProtocol,
                               .bigFile,
-                              .todoMark]
+                              .todoMark,
+                              .xCodeProjectNotUpdated]
 
 let ruleRunner: RuleRunner = .init()
 ruleRunner.runRules(from: rules)

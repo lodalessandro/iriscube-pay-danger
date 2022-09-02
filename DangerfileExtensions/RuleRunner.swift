@@ -30,6 +30,7 @@ class RuleRunner {
         case .warn:
             let resultMessage = rule.message ?? "\(rule.name) warning"
             print("⚠ \(resultMessage)")
+            
         case .fail:
             let resultMessage = rule.message ?? "\(rule.name) failure"
             print("ⓧ \(resultMessage)")
@@ -54,6 +55,7 @@ extension RuleRunner {
         case prHasTooManyCommits
         case bigFile
         case todoMark
+        case xCodeProjectNotUpdated
         
         var rule: BaseRule {
             switch self {
@@ -73,6 +75,8 @@ extension RuleRunner {
                 return bigFileRule
             case .todoMark:
                 return todoMarkRule
+            case .xCodeProjectNotUpdated:
+                return xCodeProjectNotUpdatedRule
             }
         }
     }
