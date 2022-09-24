@@ -44,7 +44,9 @@ class RuleRunner {
     
     func runRules(from runnableRules: [RunnableRule]) {
         
-        resultMessages = [:]
+        resultMessages[.success] = []
+        resultMessages[.warn] = []
+        resultMessages[.fail] = []
         
         runnableRules.forEach {
             runRule(from: $0)
@@ -55,7 +57,6 @@ class RuleRunner {
         resultMessages[.success]?.prettyPrint()
         resultMessages[.warn]?.prettyPrint()
         resultMessages[.fail]?.prettyPrint()
-
     }
 }
 
