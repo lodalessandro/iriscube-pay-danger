@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol HomeViewControllerDelegate: AnyObject {
+protocol HomeViewControllerDelegate: class {
 }
 
 final class HomeViewController: UIViewController {
@@ -52,6 +52,7 @@ final class HomeViewController: UIViewController {
     }()
     
     weak var coordinatorDelegate: HomeViewControllerDelegate?
+    var optional: String!
     
     override func loadView() {
         super.loadView()
@@ -98,4 +99,10 @@ final class HomeViewController: UIViewController {
         guard let agentCode = textField.text, !agentCode.isEmpty else { return }
         
     }
+}
+
+
+// TODO: things to do
+extension HomeViewController {
+    
 }
