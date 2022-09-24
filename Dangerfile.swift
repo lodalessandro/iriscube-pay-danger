@@ -20,11 +20,12 @@ let rules: [RunnableRule] = [ .bigPullRequest,
                               .classProtocol,
                               .bigFile,
                               .todoMark,
-                              .xCodeProjectNotUpdated  ]
+                              .xCodeProjectNotUpdated,
+                              .lockedFiles ]
 
 let ruleRunner: RuleRunner = .init()
 ruleRunner.runRules(from: rules)
 ruleRunner.printMessages()
 
-SwiftLint.lint(inline: true, configFile: "swiftlint.yml")
+//SwiftLint.lint(inline: true, configFile: "swiftlint.yml")
 

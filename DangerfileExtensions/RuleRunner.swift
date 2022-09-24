@@ -13,7 +13,7 @@ class RuleRunner {
     init() {
         createdFiles = danger.git.createdFiles
         modifiedFiles =  danger.git.modifiedFiles
-        allSourceFiles = createdFiles + modifiedFiles
+        allSourceFiles = createdFiles + modifiedFiles        
     }
     
     func runRule(from runnableRule: RunnableRule) {
@@ -72,6 +72,7 @@ extension RuleRunner {
         case bigFile
         case todoMark
         case xCodeProjectNotUpdated
+        case lockedFiles
         
         var rule: BaseRule {
             switch self {
@@ -93,6 +94,8 @@ extension RuleRunner {
                 return todoMarkRule
             case .xCodeProjectNotUpdated:
                 return xCodeProjectNotUpdatedRule
+            case .lockedFiles:
+                return lockedFilesRule
             }
         }
     }

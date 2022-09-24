@@ -120,3 +120,18 @@ let xCodeProjectNotUpdated: () -> RuleResult = {
 let xCodeProjectNotUpdatedRule: PrRule = .init(name: "Xcode project not updated rule",
                                                message: "If source files are added or deleted the Xcode project needs to be updated.",
                                                execution: xCodeProjectNotUpdated)
+
+// MARK: locked files edited ----------------------------------------------------------------------
+let lockedFiles: ([File]) -> RuleResult = { files in
+    var result: RuleResult = .success
+    
+    return files.contains {
+        $0.contains("ViewControllers")
+    } ? .fail : .success
+}
+
+let lockedFilesRule: FileRule = .init(name: "locked file rule",
+                                      message: "Those files are locked and cannot be modified or deleted",
+                                      execution: lockedFiles)
+
+
