@@ -8,3 +8,13 @@ extension String {
         return components(separatedBy: string).count - 1
     }
 }
+
+
+extension Array {
+    
+    func prettyPrint() {
+        self.forEach {
+            print($0)
+        }
+    }
+}

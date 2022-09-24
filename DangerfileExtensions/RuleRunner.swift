@@ -4,10 +4,11 @@ typealias RunnableRule = RuleRunner.RunnableRule
 
 class RuleRunner {
     
-    
     let allSourceFiles: [File]
     let createdFiles: [File]
     let modifiedFiles: [File]
+    
+    var resultMessages: [RuleResult : [String]] = [:]
     
     init() {
         createdFiles = danger.git.createdFiles
@@ -21,26 +22,40 @@ class RuleRunner {
         
         guard let result = rule.result else { return }
         
+        var resultMessage: String = ""
+        
         switch result {
             
         case .success:
-            let resultMessage = "\(rule.name) success"
-            print("✅ \(resultMessage)")
+            resultMessage = "\(rule.name) success"
+            resultMessage = "✅ \(resultMessage)"
             
         case .warn:
-            let resultMessage = rule.message ?? "\(rule.name) warning"
-            print("⚠️  \(resultMessage)")
+            resultMessage = rule.message ?? "\(rule.name) warning"
+            resultMessage = "⚠️ \(resultMessage)"
             
         case .fail:
-            let resultMessage = rule.message ?? "\(rule.name) failure"
-            print("❌ \(resultMessage)")
+            resultMessage = rule.message ?? "\(rule.name) failure"
+            resultMessage = "❌ \(resultMessage)"
         }
+        
+        resultMessages[result]?.append(resultMessage)
     }
     
     func runRules(from runnableRules: [RunnableRule]) {
+        
+        resultMessages = [:]
+        
         runnableRules.forEach {
             runRule(from: $0)
         }
+    }
+    
+    func printMessages() {
+        resultMessages[.success]?.prettyPrint()
+        resultMessages[.warn]?.prettyPrint()
+        resultMessages[.fail]?.prettyPrint()
+
     }
 }
 
