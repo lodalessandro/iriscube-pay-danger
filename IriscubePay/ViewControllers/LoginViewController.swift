@@ -54,7 +54,7 @@ final class LoginViewController: UIViewController {
     
     weak var coordinatorDelegate: LoginViewControllerDelegate?
     
-    let optional: String? = "prova"
+    let optional: String! = "prova"
     
     override func loadView() {
         super.loadView()
