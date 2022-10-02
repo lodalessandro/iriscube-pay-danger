@@ -8,7 +8,7 @@ class RuleRunner {
     let createdFiles: [File]
     let modifiedFiles: [File]
     
-    var resultMessages: [RuleResult : [String]] = [:]
+    var debugMessages: [RuleResult : [String]] = [:]
     
     init() {
         createdFiles = danger.git.createdFiles
@@ -29,27 +29,26 @@ class RuleRunner {
         case .success:
             resultMessage = "\(rule.name) success"
             resultMessage = "✅ \(resultMessage)"
-            message(resultMessage)
             
         case .warn:
             resultMessage = rule.message ?? "\(rule.name) warning"
-            resultMessage = "⚠️ \(resultMessage)"
             warn(resultMessage)
+            resultMessage = "⚠️ \(resultMessage)"
             
         case .fail:
             resultMessage = rule.message ?? "\(rule.name) failure"
-            resultMessage = "❌ \(resultMessage)"
             fail(resultMessage)
+            resultMessage = "❌ \(resultMessage)"
         }
         
-        resultMessages[result]?.append(resultMessage)
+        debugMessages[result]?.append(resultMessage)
     }
     
     func runRules(from runnableRules: [RunnableRule]) {
         
-        resultMessages[.success] = []
-        resultMessages[.warn] = []
-        resultMessages[.fail] = []
+        debugMessages[.success] = []
+        debugMessages[.warn] = []
+        debugMessages[.fail] = []
         
         runnableRules.forEach {
             runRule(from: $0)
@@ -57,9 +56,9 @@ class RuleRunner {
     }
     
     func printMessages() {
-        resultMessages[.success]?.prettyPrint()
-        resultMessages[.warn]?.prettyPrint()
-        resultMessages[.fail]?.prettyPrint()
+        debugMessages[.success]?.prettyPrint()
+        debugMessages[.warn]?.prettyPrint()
+        debugMessages[.fail]?.prettyPrint()
     }
 }
 
