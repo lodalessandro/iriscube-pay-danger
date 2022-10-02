@@ -5,7 +5,11 @@ extension String {
     }
 
     func numberOfOccurrencesOf(string: String) -> Int {
-        return components(separatedBy: string).count - 1
+        return toArray(separatedBy: string).count - 1
+    }
+    
+    func toArray(separatedBy: String) -> [Self] {
+        return components(separatedBy: separatedBy)
     }
 }
 

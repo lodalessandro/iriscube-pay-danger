@@ -125,8 +125,13 @@ let xCodeProjectNotUpdatedRule: PrRule = .init(name: "Xcode project not updated 
 let lockedFiles: ([File]) -> RuleResult = { files in
     var result: RuleResult = .success
     
-    return files.contains {
-        $0.contains("ViewControllers")
+    let lockedFolders = danger.utils.readFile("DangerLockedFolders.txt").toArray(separatedBy: "\n")
+    
+    return files.contains { file in
+        lockedFolders.contains { lockedFolder in
+        file.contains(lockedFolder)
+    }
+        
     } ? .fail : .success
 }
 

@@ -29,14 +29,17 @@ class RuleRunner {
         case .success:
             resultMessage = "\(rule.name) success"
             resultMessage = "✅ \(resultMessage)"
+            message(resultMessage)
             
         case .warn:
             resultMessage = rule.message ?? "\(rule.name) warning"
             resultMessage = "⚠️ \(resultMessage)"
+            warn(resultMessage)
             
         case .fail:
             resultMessage = rule.message ?? "\(rule.name) failure"
             resultMessage = "❌ \(resultMessage)"
+            fail(resultMessage)
         }
         
         resultMessages[result]?.append(resultMessage)

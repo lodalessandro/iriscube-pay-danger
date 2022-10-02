@@ -26,6 +26,3 @@ let rules: [RunnableRule] = [ .bigPullRequest,
 let ruleRunner: RuleRunner = .init()
 ruleRunner.runRules(from: rules)
 ruleRunner.printMessages()
-
-//SwiftLint.lint(inline: true, configFile: "swiftlint.yml")
-
