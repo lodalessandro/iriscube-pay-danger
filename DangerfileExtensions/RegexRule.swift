@@ -14,14 +14,11 @@ class RegexRule: BaseRule {
         super.init(name: name, message: message)
     }
     
-    override func run(on files: [File]?) {
-        guard let files = files
-        else {
-            result = .success
-            return
-        }
+    override func run(created: [File]?, modified: [File]?, deleted: [File]? = nil) {
+        guard let created = created,
+              let modified = modified else { return }
         
-        for file in files {
+        for file in created + modified {
             let regexResult = danger.utils.readFile(file).range(of: regex,
                                                            options: .regularExpression)
             if let _ = regexResult {

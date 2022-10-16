@@ -12,7 +12,10 @@ class PrRule: BaseRule {
         super.init(name: name, message: message)
     }
     
-    override func run(on files: [File]? = nil) {
+    
+    override func run(created: [File]? = nil,
+                      modified: [File]? = nil,
+                      deleted: [File]? = nil) {
         result = execution()
     }
 }

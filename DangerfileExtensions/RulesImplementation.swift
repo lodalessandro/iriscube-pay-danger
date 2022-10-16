@@ -82,10 +82,10 @@ let classProtocolRule: RegexRule = .init(name: "class protocol rule",
 
 
 //MARK: big file ----------------------------------------------------------------------------------
-let bigFile: ([File]) -> RuleResult = {
+let bigFile: ([File], [File], [File]) -> RuleResult = { created, modified, _ in
     var result: RuleResult = .success
     
-    $0.forEach { file in
+    (created + modified).forEach { file in
         let fileString = danger.utils.readFile(file)
         if fileString.numberOfLines() > 100 {
             result = .warn
@@ -109,29 +109,28 @@ let todoMarkRule: RegexRule = .init(name: "todo mark rule",
 
 
 // MARK: xCode project not updated ----------------------------------------------------------------
-let xCodeProjectNotUpdated: () -> RuleResult = {
-    let addedSources = danger.git.createdFiles.contains { $0.fileType == .swift }
-    let deletedSources = danger.git.deletedFiles.contains { $0.fileType == .swift }
-    let isXcodeProjectUpdated = danger.git.modifiedFiles.contains { $0.contains(".xcodeproj") }
+let xCodeProjectNotUpdated: ([File], [File], [File]) -> RuleResult = { created, modified, deleted in
+    let addedSources = created.contains { $0.fileType == .swift }
+    let deletedSources = deleted.contains { $0.fileType == .swift }
+    let isXcodeProjectUpdated = modified.contains { $0.contains(".xcodeproj") }
     
     return (addedSources || deletedSources) && !isXcodeProjectUpdated ? .fail : .success
 }
 
-let xCodeProjectNotUpdatedRule: PrRule = .init(name: "Xcode project not updated rule",
-                                               message: "If source files are added or deleted the Xcode project needs to be updated.",
-                                               execution: xCodeProjectNotUpdated)
+let xCodeProjectNotUpdatedRule: FileRule = .init(name: "Xcode project not updated rule",
+                                                 message: "If source files are added or deleted the Xcode project needs to be updated.",
+                                                 execution: xCodeProjectNotUpdated)
 
 // MARK: locked files edited ----------------------------------------------------------------------
-let lockedFiles: ([File]) -> RuleResult = { files in
-    var result: RuleResult = .success
+let lockedFiles: ([File], [File], [File]) -> RuleResult = { created, modified, deleted in
     
     let lockedFolders = danger.utils.readFile("DangerLockedFolders.txt").toArray(separatedBy: "\n")
+    let allFiles = created + modified + deleted
     
-    return files.contains { file in
+    return allFiles.contains { file in
         lockedFolders.contains { lockedFolder in
-        file.contains(lockedFolder)
-    }
-        
+            file.contains(lockedFolder)
+        }
     } ? .fail : .success
 }
 

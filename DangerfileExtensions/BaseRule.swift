@@ -11,5 +11,9 @@ class BaseRule {
         self.message = message
     }
     
-    func run(on files: [File]?) {}
+    func run(created: [File]?,
+             modified: [File]?,
+             deleted: [File]?) {
+        
+    }
 }
