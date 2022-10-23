@@ -1,4 +1,5 @@
 import Danger
+import Foundation
 
 //MARK: Big pull request --------------------------------------------------------------------------
 var bigPr: () -> RuleResult = {
@@ -122,20 +123,29 @@ let xCodeProjectNotUpdatedRule: FileRule = .init(name: "Xcode project not update
                                                  execution: xCodeProjectNotUpdated)
 
 // MARK: locked files edited ----------------------------------------------------------------------
-let lockedFiles: ([File], [File], [File]) -> RuleResult = { created, modified, deleted in
+
+struct LockedFiles: Decodable {
+    let lockedFiles: [LockedFile]
+}
+
+struct LockedFile: Decodable {
+    let path: String
+    let allowedPeople: [String]
+}
+
+let lockedFilesCompletion: ([File], [File], [File]) -> RuleResult = { created, modified, deleted in
     
-    let lockedFolders = danger.utils.readFile("DangerLockedFolders.txt").toArray(separatedBy: "\n")
     let allFiles = created + modified + deleted
-    
+    let jsonData = danger.utils.readFile("DangerLockedFiles.json").data(using: .utf8)!
+    let lockedFiles: [LockedFile] = try! JSONDecoder().decode(LockedFiles.self, from: jsonData).lockedFiles
+            
     return allFiles.contains { file in
-        lockedFolders.contains { lockedFolder in
-            file.contains(lockedFolder)
+        lockedFiles.contains { lockedFile in
+            file.contains(lockedFile.path) && !lockedFile.allowedPeople.contains(danger.github.pullRequest.user.login)
         }
-    } ? .fail : .success
+    } ? .fail: .success
 }
 
 let lockedFilesRule: FileRule = .init(name: "locked file rule",
-                                      message: "Those files are locked and cannot be modified or deleted",
-                                      execution: lockedFiles)
-
-
+                                      message: "Some file in your PR are locked and cannot be modified or deleted",
+                                      execution: lockedFilesCompletion)

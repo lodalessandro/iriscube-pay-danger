@@ -4,11 +4,11 @@ extension String {
         return numberOfOccurrencesOf(string: "\n") + 1
     }
 
-    func numberOfOccurrencesOf(string: String) -> Int {
+    func numberOfOccurrencesOf(string: Self) -> Int {
         return toArray(separatedBy: string).count - 1
     }
     
-    func toArray(separatedBy: String) -> [Self] {
+    func toArray(separatedBy: Self) -> [Self] {
         return components(separatedBy: separatedBy)
     }
 }

@@ -55,7 +55,7 @@ class RuleRunner {
         }
     }
     
-    func printMessages() {
+    func printDebugMessages() {
         debugMessages[.success]?.prettyPrint()
         debugMessages[.warn]?.prettyPrint()
         debugMessages[.fail]?.prettyPrint()
